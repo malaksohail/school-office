@@ -1,0 +1,65 @@
+﻿@model DcssePortal.Web.Models.DateSheetViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+}
+
+<div class="container mt-5 pt-5" style="background-color:#ffecb3;">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+            <h2>Create DateSheet</h2>
+            <div class="text-danger">
+                @Html.ValidationSummary(false)
+            </div>
+
+            @using (Html.BeginForm("Create", "Datesheets", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <hr />
+                    <div class="form-group form-row mt-3 mb-1">
+                        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label ml-2" })
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", @required = "true", placeholder = "Enter Title" } })
+                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group form-row mt-3 mb-1">
+                        @Html.LabelFor(model => model.Department, htmlAttributes: new { @class = "control-label ml-2" })
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.Department, new { htmlAttributes = new { @class = "form-control", @required = "true", placeholder = "Enter Department" } })
+                            @Html.ValidationMessageFor(model => model.Department, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group form-row mt-3 mb-1">
+                        <p class="ml-2">File</p>:
+                        <div class="col-md-12">
+                            <input type="file" name="File" required class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-actions mt-5 pb-5">
+                        <button type="submit" value="Create" class="btn btn-success mr-5">
+                            <strong>Create</strong>
+                        </button>
+                        <a href="@Url.Action("Index")" class="btn btn-secondary">
+                            <i class="fas fa-backspace"></i>
+                            <span>
+                                <strong>Back to List</strong>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

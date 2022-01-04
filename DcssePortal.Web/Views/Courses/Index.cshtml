@@ -1,0 +1,103 @@
+﻿@model IEnumerable<DcssePortal.Model.Course>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="container-fluid mt-5 pt-3" style="color: #566787; background: #f5f5f5; font-family: 'Varela Round', sans-serif; font-size: 15px;">
+
+    <h2>Courses</h2>
+    @if (User.IsInRole("Faculty"))
+    {
+        <a href="@Url.Action("Create")" class="btn btn-success float-right mb-2">
+            <i class="fas fa-plus-circle"></i>
+            <span>
+                <strong>Add New Course</strong>
+            </span>
+        </a>}
+    else if (User.IsInRole("Student"))
+    {
+        <a href="@Url.Action("Join")" class="btn btn-success float-right mb-2">
+            <i class="fas fa-plus-circle"></i>
+            <span>
+                <strong>Join Course</strong>
+            </span>
+        </a>}
+    <table class="table table-bordered table-striped table-hover table-responsive-lg" id="myTableName1">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CourseCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CourseTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreditHour)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SecretCode)
+                </th>
+                <th>
+                    Contents
+                </th>
+                <th>
+                    Feedbacks
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CourseCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CourseTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreditHour)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SecretCode)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Contents", "Course", "Contents", new { id = item.ID }, null)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Feedbacks", "Course", "Feedbacks", new { id = item.ID }, null)
+                    </td>
+                    <td>
+                        @if (User.IsInRole("Faculty"))
+                        {
+                            <a href="@Url.Action("Edit", new { id=item.ID} )" class=" " style="font-size:20px; color:lightseagreen; display:inline-block; margin-right:15px;" data-toggle="tooltip" title="Edit">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                            <a href="@Url.Action("Delete",new { id=item.ID} )" class=" " style="font-size:20px; color:red; display:inline-block; margin-right:15px;" data-toggle="tooltip" title="Delete">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        }
+
+                        <a href="@Url.Action("Details",new { id=item.ID} )" class=" " style="font-size:20px; color:orange; display:inline-block; margin-right:15px;" data-toggle="tooltip" title="Detail">
+                            <i class="fas fa-book"></i>
+                        </a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $('#myTableName1').DataTable();
+    });
+</script>

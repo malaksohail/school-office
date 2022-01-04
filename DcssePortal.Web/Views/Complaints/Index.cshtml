@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DcssePortal.Model.Complaints>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="container mt-4 pb-5" style="color: #566787; background: #f5f5f5; font-family: 'Varela Round', sans-serif; font-size: 15px;">
+
+    <style>
+        .rotated {
+            transform: rotate(-3deg);
+            /*/ Equal to rotateZ(45deg) /*/
+        }
+    </style>
+
+
+
+    <h2 class="pt-3">
+        <b>Complaints</b>
+    </h2>
+    @if (User.IsInRole("Student"))
+    {
+        <a href="@Url.Action("Create")" class="btn btn-success float-right mb-2">
+            <i class="fas fa-plus-circle"></i>
+            <span>
+                <strong>Add New Complaint</strong>
+            </span>
+        </a>
+    }
+</div>
+<div class="container pb-3" style="color: #566787; background: #f5f5f5; font-family: 'Varela Round', sans-serif; font-size: 15px;">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3">
+                <div class="rotated">
+                    <div class="card-group">
+                        <div class="card mt-5" style="width: 300px; color:white; background-color:#9a6533;">
+                            <div class="card-body">
+                                @*<div class="text-right">@Html.DisplayFor(x=>item.)</div>*@
+                                @*<hr />*@
+                                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+                                <h6 class="card-subtitle mb-2" style="color:#e9e9e9">@Html.DisplayFor(modelItem => item.Detail)</h6>
+                                @*<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>*@
+                                <a href="@Url.Action("Details",new { id=item.ID} )" class="card-link btn btn-dark float-right" style="color:white">Check</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#myTableName').DataTable();
+    });
+</script>

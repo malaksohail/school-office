@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            background-color: #5F9DA1;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="navbar nav-tabs navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <img class="img-responsive" style="width:100%; height:130px;" src="~/Images/headerpic.PNG">
+        </div>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Faculty Management", "Index", "Faculties")</li>
+                    <li>@Html.ActionLink("Results Management", "Index", "Results")</li>
+                    <li>@Html.ActionLink("Course Scheme", "Index", "CoursesSchemes")</li>
+                    <li>@Html.ActionLink("News", "Index", "Noticeboards")</li>
+                    <li>@Html.ActionLink("Complaints", "Index", "Complaints")</li>
+                    <li>@Html.ActionLink("Check DateSheet", "Index", "DateSheets")</li>
+                    <li>@Html.ActionLink("Student", "Index", "Students")</li>
+                    <li>@Html.ActionLink("About Us", "Index", "Home")</li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    @RenderBody()
+
+    <footer class="mt-5">
+        <strong>&copy; 2020 International Islamic University Islamabad</strong>
+    </footer>
+</body>
+</html>

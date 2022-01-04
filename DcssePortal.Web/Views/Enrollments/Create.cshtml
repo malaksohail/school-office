@@ -1,0 +1,38 @@
+﻿@model DcssePortal.Model.Enrollment
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Enrollment</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.DropDownList("Course", new SelectList(ViewBag.Courses, "ID", "CourseTitle"), htmlAttributes: new { @class = "form-control", id = "course" })
+    </div>
+    <div class="form-group">
+        @Html.DropDownList("Student", new SelectList(ViewBag.Students, "ID", "RegNo"), htmlAttributes: new { @class = "form-control", id = "course" })
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

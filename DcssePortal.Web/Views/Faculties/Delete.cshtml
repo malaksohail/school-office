@@ -1,0 +1,90 @@
+﻿@model DcssePortal.Model.Faculty
+
+@{
+  ViewBag.Title = "Delete";
+  Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="container mt-5 pt-5" style="background-color:#ffecb3;">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+            <h3>Delete Faculty Member</h3>
+            <h3>Are you sure you want to delete this?</h3>
+
+            <div>
+
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.FirstName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.LastName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Designation)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Designation)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Phone)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Phone)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Age)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Age)
+                    </dd>
+
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions mt-5 pb-5">
+                        <button type="submit" value="Delete" class="btn btn-danger mr-5">
+                            <i class="fas fa-trash-alt icon-white"></i>
+                            <strong>Delete</strong>
+                        </button>
+                        <a href="@Url.Action("Index")" class="btn btn-secondary">
+                            <i class="fas fa-backspace"></i>
+                            <span>
+                                <strong>Back to List</strong>
+                            </span>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

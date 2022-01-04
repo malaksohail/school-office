@@ -1,0 +1,100 @@
+﻿@model IEnumerable<DcssePortal.Model.Faculty>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container-fluid mt-4" style="color: #566787; background: #f5f5f5; font-family: 'Varela Round', sans-serif; font-size: 15px;">
+
+    <h2 class="pt-3">
+        Manage <b>Faculty</b>
+    </h2>
+    <a href="@Url.Action("Create")" class="btn btn-success float-right mb-2">
+        <i class="fas fa-plus-circle"></i>
+        <span>
+            <strong>Add New User</strong>
+        </span>
+    </a>
+
+
+    <table id="myTableName1" class="table table-bordered table-striped table-hover table-responsive-lg">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Age)
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", new { id=item.ID} )" class=" " style="font-size:20px; color:lightseagreen; display:inline-block; margin-right:15px;" data-toggle="tooltip" title="Edit">
+                            <i class="fas fa-pencil-alt"></i>
+                            @*<span>
+                            <strong>Edit</strong>
+                        </span>*@
+                        </a>
+                        <a href="@Url.Action("Delete", new { id=item.ID} )" class=" " style="font-size:20px; color:red; display:inline-block; margin-right:15px;" data-toggle="tooltip" title="Delete">
+                            <i class="fas fa-trash-alt"></i>
+                            @*<span>
+                            <strong>Delete</strong>
+                        </span>*@
+                        </a>
+                        <a href="@Url.Action("Details",new { id=item.ID} )" class=" " style="font-size:20px; color:orange; display:inline-block; margin-right:15px;" data-toggle="tooltip" title="Detail">
+                            <i class="fas fa-book"></i>
+                            @*<span>
+                            <strong>Detail</strong>
+                        </span>*@
+                        </a>
+                    </td>
+                    @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>*@
+                </tr>
+            }
+            </tbody>
+
+    </table>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#myTableName1').DataTable();
+    });
+</script>

@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Join";
+}
+
+<div class="container mt-5  pt-5" style="background-color:#ffecb3;">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6 pb-3">
+            <h2>Join a Course</h2>
+            <div class="text-danger">
+                @Html.ValidationSummary(false)
+            </div>
+            @using (Html.BeginForm("Join", "Courses"))
+            {
+                <div class="form-horizontal">
+                    <div class="form-group form-row mt-3 mb-1">
+                        <span class="ml-2">Instructor Id</span>
+                        <div class="col-md-12">
+                            <input placeholder="Instructor Id" name="In</div>structureId" class="form-control mb-2" required />
+                        </div>
+                    </div>
+                    <div class="form-group form-row mt-3 mb-1">
+                        <span class="ml-2">Course Code</span>
+                        <div class="col-md-12">
+                            <input placeholder="course Code" name="courseCode" class="form-control mb-2" required />
+                        </div>
+                    </div>
+                    <div class="form-group form-row mt-3 mb-1">
+                        <span class="ml-2">Secret Key</span>
+                        <div class="col-md-12">
+                            <input placeholder="secret Key" name="secretCode" class="form-control mb-2" required />
+                        </div>
+                    </div>
+
+                    <!--Buttons-->
+
+                    <div class="form-actions mt-2 pb-5">
+                        <button type="submit" value="Join" class="btn btn-success mr-5">
+                            <strong>Join</strong>
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

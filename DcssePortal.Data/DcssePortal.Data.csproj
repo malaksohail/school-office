@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D511842-EEEC-45BC-B019-2F449AF95271}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DcssePortal.Data</RootNamespace>
+    <AssemblyName>DcssePortal.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.1\lib</WebGreaseLibPath>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202010280018145_ModelClassesUpdated.cs" />
+    <Compile Include="Migrations\202010280018145_ModelClassesUpdated.designer.cs">
+      <DependentUpon>202010280018145_ModelClassesUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010311520231_ModelClassesUpdated1.cs" />
+    <Compile Include="Migrations\202010311520231_ModelClassesUpdated1.designer.cs">
+      <DependentUpon>202010311520231_ModelClassesUpdated1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010311545555_ModelClassesUpdatedAgain.cs" />
+    <Compile Include="Migrations\202010311545555_ModelClassesUpdatedAgain.designer.cs">
+      <DependentUpon>202010311545555_ModelClassesUpdatedAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010311549189_ModelClassesUpdatedAgain1.cs" />
+    <Compile Include="Migrations\202010311549189_ModelClassesUpdatedAgain1.designer.cs">
+      <DependentUpon>202010311549189_ModelClassesUpdatedAgain1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010311934235_ModelClassesUpdatedAgain2.cs" />
+    <Compile Include="Migrations\202010311934235_ModelClassesUpdatedAgain2.designer.cs">
+      <DependentUpon>202010311934235_ModelClassesUpdatedAgain2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011012005368_adminAddedRelationAddedToUsers.cs" />
+    <Compile Include="Migrations\202011012005368_adminAddedRelationAddedToUsers.designer.cs">
+      <DependentUpon>202011012005368_adminAddedRelationAddedToUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011012008192_AdminAddedToContext.cs" />
+    <Compile Include="Migrations\202011012008192_AdminAddedToContext.designer.cs">
+      <DependentUpon>202011012008192_AdminAddedToContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011012037599_relationsBuilt.cs" />
+    <Compile Include="Migrations\202011012037599_relationsBuilt.designer.cs">
+      <DependentUpon>202011012037599_relationsBuilt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011012133246_datatypeUpdatedForDobStudent.cs" />
+    <Compile Include="Migrations\202011012133246_datatypeUpdatedForDobStudent.designer.cs">
+      <DependentUpon>202011012133246_datatypeUpdatedForDobStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011012209360_emailAddedToAdmin.cs" />
+    <Compile Include="Migrations\202011012209360_emailAddedToAdmin.designer.cs">
+      <DependentUpon>202011012209360_emailAddedToAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011022008095_enrollmentUniqueSet.cs" />
+    <Compile Include="Migrations\202011022008095_enrollmentUniqueSet.designer.cs">
+      <DependentUpon>202011022008095_enrollmentUniqueSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011022044467_keyAddedToResult.cs" />
+    <Compile Include="Migrations\202011022044467_keyAddedToResult.designer.cs">
+      <DependentUpon>202011022044467_keyAddedToResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011022143107_enrollmentLinkedWithResult.cs" />
+    <Compile Include="Migrations\202011022143107_enrollmentLinkedWithResult.designer.cs">
+      <DependentUpon>202011022143107_enrollmentLinkedWithResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011022150181_enrollmentLinkedWithResultSetup.cs" />
+    <Compile Include="Migrations\202011022150181_enrollmentLinkedWithResultSetup.designer.cs">
+      <DependentUpon>202011022150181_enrollmentLinkedWithResultSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011022225506_feedbackMigrationFixed.cs" />
+    <Compile Include="Migrations\202011022225506_feedbackMigrationFixed.designer.cs">
+      <DependentUpon>202011022225506_feedbackMigrationFixed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011062139076_test.cs" />
+    <Compile Include="Migrations\202011062139076_test.designer.cs">
+      <DependentUpon>202011062139076_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011062141593_test1.cs" />
+    <Compile Include="Migrations\202011062141593_test1.designer.cs">
+      <DependentUpon>202011062141593_test1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011081814229_coureSecretCodeAdded.cs" />
+    <Compile Include="Migrations\202011081814229_coureSecretCodeAdded.designer.cs">
+      <DependentUpon>202011081814229_coureSecretCodeAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011081911086_datetimeChanged.cs" />
+    <Compile Include="Migrations\202011081911086_datetimeChanged.designer.cs">
+      <DependentUpon>202011081911086_datetimeChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011081922370_datetimeTypeChangedForDateSheet.cs" />
+    <Compile Include="Migrations\202011081922370_datetimeTypeChangedForDateSheet.designer.cs">
+      <DependentUpon>202011081922370_datetimeTypeChangedForDateSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011081927537_dateTypeChangedForCourseScheme.cs" />
+    <Compile Include="Migrations\202011081927537_dateTypeChangedForCourseScheme.designer.cs">
+      <DependentUpon>202011081927537_dateTypeChangedForCourseScheme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011082003247_dateTypeChangedForFeedback.cs" />
+    <Compile Include="Migrations\202011082003247_dateTypeChangedForFeedback.designer.cs">
+      <DependentUpon>202011082003247_dateTypeChangedForFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011082043214_resultModelUpdated.cs" />
+    <Compile Include="Migrations\202011082043214_resultModelUpdated.designer.cs">
+      <DependentUpon>202011082043214_resultModelUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011121625225_regNumUnique.cs" />
+    <Compile Include="Migrations\202011121625225_regNumUnique.designer.cs">
+      <DependentUpon>202011121625225_regNumUnique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DcssePortal.Model\DcssePortal.Model.csproj">
+      <Project>{72b88ce8-4fc3-427e-8da4-f5ad5b0853c4}</Project>
+      <Name>DcssePortal.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202010280018145_ModelClassesUpdated.resx">
+      <DependentUpon>202010280018145_ModelClassesUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010311520231_ModelClassesUpdated1.resx">
+      <DependentUpon>202010311520231_ModelClassesUpdated1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010311545555_ModelClassesUpdatedAgain.resx">
+      <DependentUpon>202010311545555_ModelClassesUpdatedAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010311549189_ModelClassesUpdatedAgain1.resx">
+      <DependentUpon>202010311549189_ModelClassesUpdatedAgain1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010311934235_ModelClassesUpdatedAgain2.resx">
+      <DependentUpon>202010311934235_ModelClassesUpdatedAgain2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011012005368_adminAddedRelationAddedToUsers.resx">
+      <DependentUpon>202011012005368_adminAddedRelationAddedToUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011012008192_AdminAddedToContext.resx">
+      <DependentUpon>202011012008192_AdminAddedToContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011012037599_relationsBuilt.resx">
+      <DependentUpon>202011012037599_relationsBuilt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011012133246_datatypeUpdatedForDobStudent.resx">
+      <DependentUpon>202011012133246_datatypeUpdatedForDobStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011012209360_emailAddedToAdmin.resx">
+      <DependentUpon>202011012209360_emailAddedToAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011022008095_enrollmentUniqueSet.resx">
+      <DependentUpon>202011022008095_enrollmentUniqueSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011022044467_keyAddedToResult.resx">
+      <DependentUpon>202011022044467_keyAddedToResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011022143107_enrollmentLinkedWithResult.resx">
+      <DependentUpon>202011022143107_enrollmentLinkedWithResult.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011022150181_enrollmentLinkedWithResultSetup.resx">
+      <DependentUpon>202011022150181_enrollmentLinkedWithResultSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011022225506_feedbackMigrationFixed.resx">
+      <DependentUpon>202011022225506_feedbackMigrationFixed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011062139076_test.resx">
+      <DependentUpon>202011062139076_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011062141593_test1.resx">
+      <DependentUpon>202011062141593_test1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011081814229_coureSecretCodeAdded.resx">
+      <DependentUpon>202011081814229_coureSecretCodeAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011081911086_datetimeChanged.resx">
+      <DependentUpon>202011081911086_datetimeChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011081922370_datetimeTypeChangedForDateSheet.resx">
+      <DependentUpon>202011081922370_datetimeTypeChangedForDateSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011081927537_dateTypeChangedForCourseScheme.resx">
+      <DependentUpon>202011081927537_dateTypeChangedForCourseScheme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011082003247_dateTypeChangedForFeedback.resx">
+      <DependentUpon>202011082003247_dateTypeChangedForFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011082043214_resultModelUpdated.resx">
+      <DependentUpon>202011082043214_resultModelUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011121625225_regNumUnique.resx">
+      <DependentUpon>202011121625225_regNumUnique.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

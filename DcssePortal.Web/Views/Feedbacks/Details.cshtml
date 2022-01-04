@@ -1,0 +1,42 @@
+﻿@model DcssePortal.Model.Feedback
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+            <h2>Details</h2>
+
+            <div>
+                <h4>Feedback</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Title)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FileURL)
+                    </dt>
+
+                    <dd>
+                        @using (Html.BeginForm("download", "Feedbacks", FormMethod.Get))
+                        {
+                            @Html.HiddenFor(x => x.ID)
+                            <input type="submit" value="Download File" />
+                        }
+                    </dd>
+
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+            </div></div></div>

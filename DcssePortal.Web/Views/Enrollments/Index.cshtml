@@ -1,0 +1,36 @@
+﻿@model IEnumerable<DcssePortal.Model.Enrollment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@if (!User.IsInRole("Admin"))
+{
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+}
+<table class="table">
+    <tr>
+        <th>Student</th>
+        <th>Course</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@item.Student.RegNo</td>
+        <td>@item.Course.CourseTitle</td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.ID }) |*@
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) 
+            @if(User.IsInRole("Admin")){
+                <span>|</span>
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })}
+        </td>
+    </tr>
+}
+
+</table>
